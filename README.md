@@ -34,4 +34,4 @@ The goal of this assignment was to build a deep neural network from scratch, exp
 
 
 
-## 3. Recurrant Neural Network
+## 3. Recurrent Neural Network
