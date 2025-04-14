@@ -1,37 +1,75 @@
-# Deep Learning Models
-DNN, CNN, and RNN models created for assignments in Deep Learning class from Ben Gurion University of the Negev taught by Dr. Gilad Katz.
+# Deep Learning – Homework Assignments  
+**Ben-Gurion University of the Negev – Department of Software and Information Systems Engineering**  
+**Course: Deep Learning**
 
-## 1. Dense Neural Network Model
+## Overview  
+This repository contains my solutions and experiments for the course assignments in Deep Learning. Each assignment explores a key building block of deep learning—from constructing a dense neural network from scratch to implementing advanced models like Siamese networks and Recurrent Neural Networks.
 
-The goal of this assignment was to build a deep neural network from scratch, explicitly writing the forward and backpropagation processes without the use of libraries from softwares such as Pytorch. We implemented an L-layer network with ReLU as the activation function and softmax on the last layer, and trained the model for classification on the MNIST dataset. We then trained three different models, each with 4 hidden layers with sizes 20, 7, 5, 10. We used a learning rate of 0.009 and early stopping criterion of 100 training steps with less than 0.00001 improvement on the validation cost.
+---
 
-1. The above model with a batch size of 512.
+## Repository Structure
 
-   a. Train Accuracy: 0.9401041666666666
-   
-   b. Validation Accuracy: 0.937
-   
-   c. Test Accuracy: 0.9309
-  
-3. The above model with the addition of batchnorm and a batch size of 256
+- `hw1/`  
+  - `Dense_Neural_Network_From_Scratch.ipynb`  
+    Implements a deep fully connected network (DNN) with forward and backward propagation, trained and evaluated on the MNIST dataset.  
+    Includes support for batch normalization, L2 regularization, and training without external libraries like PyTorch or TensorFlow.
 
-   a. Train Accuracy: 0.9312916666666666
-   
-   b. Validation Accuracy: 0.9345
-   
-   c. Test Accuracy: 0.9192
+- `hw2/`  
+  - TBD
 
-5. The above model without batchnorm and now with L2 regularization with epsilon = 0.4
+- `hw3/`  
+  - TBD
 
-   a. Train Accuracy: 0.9511875
-   
-   b. Validation Accuracy: 0.95175
-   
-   c. Test Accuracy: 0.941
+- `hw4/`
+  TBD
 
+---
 
-## 2. Convolutional Neural Network
+## Assignment 1 – Dense Neural Network from Scratch
 
+### Goal
+To build a complete dense neural network architecture, implementing both the **forward** and **backward** propagation steps manually. Train the model on MNIST and evaluate performance with and without batch normalization and L2 regularization.
 
+### Implemented Features
+- Forward Propagation
+  - `initialize_parameters`, `linear_forward`, `relu`, `softmax`, `linear_activation_forward`
+  - Batch normalization (`apply_batchnorm`)
+  - Full model forward: `l_model_forward`
 
-## 3. Recurrent Neural Network
+- Backward Propagation
+  - `linear_backward`, `relu_backward`, `softmax_backward`
+  - `linear_activation_backward`, `l_model_backward`
+  - Support for L2 regularization
+
+- Training & Evaluation
+  - `compute_cost` with categorical cross-entropy
+  - `update_parameters` using gradient descent
+  - `l_layer_model` for training
+  - `predict` for accuracy evaluation
+
+### Experiments
+- Trained on MNIST with 4 hidden layers: `[784 → 20 → 7 → 5 → 10]`
+- Batch size, learning rate, and early stopping configurable
+- Performance compared:
+  - With vs. without batch normalization
+  - With vs. without L2 regularization
+
+---
+
+## Upcoming Assignments
+
+### Assignment 2 – Siamese Network with CNN
+- Build a Siamese architecture for similarity tasks
+- Use CNNs to learn an embedding space
+- Train using contrastive or triplet loss
+- Apply to image pairs (e.g., face or digit verification)
+
+### Assignment 3 – Lyric Generator with RNN
+- Build an RNN (likely LSTM or GRU) to generate sequences
+- Train on a song lyric dataset
+- Sample from the model to generate new lyrics
+
+### Assignment 4 – TBD
+- Description and notebook will be added when released
+
+---
